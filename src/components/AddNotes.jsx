@@ -4,11 +4,11 @@ import deleteButton from "../assets/image/delete.svg"
 import hoverEdit from "../assets/image/edit-blue.png"
 import hoverDelete from "../assets/image/delete-red.svg"
 export default function AddNotes(props) {
-    const [hoveredEditState, setHoveredEditState] = useState(false)
+    const [hoveredEditState, setHoveredEditState] = useState(null)
     const [hoveredDeleteState, setHoveredDeleteState] = useState(false)
     return (
         <>
-            <div className='pt-5 px-28' style={{ display: !props.isModalOpen ? "none" : "block" }} id="newNote">
+            <div className='pt-5 px-28' id="newNote">
                 {props.notes.map((note) => (
                     <div className='flex  justify-between' key={note.id}>
                         <div className="flex gap-4" >
@@ -30,17 +30,17 @@ export default function AddNotes(props) {
                             </label>
                         </div>
                         <div className='flex ml-auto'>
-                            <img src={hoveredEditState ? hoverEdit : editButton}
+                            <img src={hoveredEditState === note.id ? hoverEdit : editButton}
                                 alt="edit Icon"
-                                onClick={() => props.funcEditAll(note.id)}
-                                onMouseEnter={() => setHoveredEditState(true)}
-                                onMouseLeave={() => setHoveredEditState(false)}
+                                onClick={() => props.funcEdit(note.id)}
+                                onMouseEnter={() => setHoveredEditState(note.id)}
+                                onMouseLeave={() => setHoveredEditState(null)}
                                 className="cursor-pointer  w-[18px] h-[18px]" />
-                            <img src={hoveredDeleteState ? hoverDelete : deleteButton}
+                            <img src={hoveredDeleteState === note.id ? hoverDelete : deleteButton}
                                 alt="delete Icon"
                                 onClick={() => props.funcDelete(note.id)}
-                                onMouseEnter={() => setHoveredDeleteState(true)}
-                                onMouseLeave={() => setHoveredDeleteState(false)}
+                                onMouseEnter={() => setHoveredDeleteState(note.id)}
+                                onMouseLeave={() => setHoveredDeleteState(null)}
                                 className="cursor-pointer w-[18px] h-[18px]" />
                         </div>
                     </div>
