@@ -6,7 +6,6 @@ import AddNotes from './components/AddNotes'
 export default function App() {
   const [notes, setNotes] = useState([])
   const [searchNotes, setSearchNotes] = useState([])
-  const [searchOpen, setSearchOpen] = useState(false)
   const [colorBg, setColorBg] = useState(true)
   const funcEdit = (id) => {
     setNotes(notes.map(note =>
