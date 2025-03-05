@@ -37,10 +37,12 @@ export default function modal(props) {
                                 type='button' onClick={() => props.setIsModalOpen(false)}>cancel</button>
                             <button className=' text-[white] bg-[#6C63FF]  uppercase py-2 px-6 mr-7 mt-24 rounded-md' type='button'
                                 onClick={() => applyHandler(noteInput)} >Apply</button>
+                            {/*  && props.setSearchEnter(false)                 add && props.setSearchEnter(true) */}
                         </div>
                     </div>
                 </div>
             </div>
         </>
+
     )
 }

@@ -8,7 +8,6 @@ export default function App() {
   const [searchNotes, setSearchNotes] = useState([])
 
 
-
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [searchEnter, setSearchEnter] = useState(false)
   const [colorBg, setColorBg] = useState(true)
@@ -40,6 +39,7 @@ export default function App() {
         searchEnter={searchEnter}
         setSearchEnter={setSearchEnter}
       />
+      {/* add && props.setSearchEnter(true) */}
       {isModalOpen &&
         <Modal
           notes={notes}
@@ -47,6 +47,7 @@ export default function App() {
           colorBg={colorBg}
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
+          setSearchEnter={setSearchEnter}
         />}
       <AddNotes
         notes={notes}

@@ -87,10 +87,3 @@ export default function TodoList(props) {
         </>
     )
 }
-// const newSearchNotes = filteredNotes.map(note => ({
-//     id: note.id,
-//     text: note.text,
-//     completed: false,
-// }))
-// console.log("newSearchNotes :",newSearchNotes)
-// props.setSearchNotes([...props.searchNotes, ...filteredNotes])
